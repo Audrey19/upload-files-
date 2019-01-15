@@ -56,11 +56,10 @@ router.post('/monupload', upload.array('monfichier',3), function (req, res, next
       fs.rename(req.files[i].path, 'public/images/' + req.files[i].originalname, function(err){
         if (err) {
           res.send('problème durant le déplacement');
-        } else {
-          res.send('Fichier uploadé avec succès');
-        }
+        } 
     }
   )};
+  res.send('Fichier uploadé avec succès');
 })
 
 
